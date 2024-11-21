@@ -69,6 +69,8 @@ kotlin {
 
             implementation(libs.bundles.ktor)
             implementation(libs.bundles.coil)
+            implementation(compose.components.resources)
+
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
