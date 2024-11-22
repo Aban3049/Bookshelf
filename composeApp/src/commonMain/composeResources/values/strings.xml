@@ -2,5 +2,9 @@
 
     <string name="search_hint">Search...</string>
     <string name="close_hint">Clear Search</string>
+    <string name="search_results">Search Results</string>
+    <string name="favourites">Favourites</string>
+    <string name="no_search_results">Oops, we there aren't any book for your search query</string>
+    <string name="no_favourite_books">You haven't saved any favourite books yet</string>
 
 </resources>
