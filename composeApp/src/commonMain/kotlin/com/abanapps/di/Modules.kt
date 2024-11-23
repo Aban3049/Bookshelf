@@ -10,6 +10,8 @@ import org.koin.core.module.dsl.viewModelOf
 import com.abanapps.book.data.repository.DefaultBookRepository
 import com.abanapps.book.domain.BookRepository
 import com.abanapps.book.presentation.book_list.BookListViewModel
+import com.abanapps.book.presentation.SharedViewModel
+import com.abanapps.book.presentation.book_detail.BookDetailViewModel
 import org.koin.core.module.Module
 
 expect val platformModule:Module
@@ -23,6 +25,8 @@ val shareModule = module {
 
 
     viewModelOf(::BookListViewModel)
+    viewModelOf(::SharedViewModel)
+    viewModelOf(::BookDetailViewModel)
 
 }
 

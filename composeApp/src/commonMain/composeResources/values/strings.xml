@@ -14,4 +14,14 @@
     <string name="error_too_many_requests">Your quota seems to be exceeded.</string>
     <string name="error_Serialization">Couldn't parse data.</string>
 
+    <string name="book_cover">Book Cover</string>
+    <string name="rating">Rating</string>
+    <string name="pages">Pages</string>
+    <string name="languages">Languages</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="description_unavailable">Description not available</string>
+    <string name="arrow_back">back Btn</string>
+    <string name="mark_As_favourite">Mark as Favourite</string>
+    <string name="remove_from_favourite">Remove from Favourite</string>
+
 </resources>
