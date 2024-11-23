@@ -12,20 +12,4 @@ data class BookListState(
     val errorMessage: UiText? = null
 )
 
-//val books = (1..100).map {
-//    Book(
-//        id = it.toString(),
-//        title = "Book $it",
-//        imageUrl = "https://",
-//        authors = listOf("Aban", "Aban", "Aban"),
-//        description = "Description $it",
-//        languages = emptyList(),
-//        firstPublishYear = null,
-//        averageRating = 4.67859,
-//        ratingCount = 5,
-//        numPages = 100,
-//        numEditors = 3
-//    )
-//}
-
 

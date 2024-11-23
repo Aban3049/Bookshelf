@@ -5,7 +5,7 @@ import com.abanapps.book.domain.Book
 
 fun SearchedBookDto.toBook(): Book {
     return Book(
-        id = id,
+        id = id.substringAfter("/"),
         title = title,
         imageUrl = if (coverKey != null) {
             "https://covers.openlibrary.org/b/olid/${coverKey}-L.jpg"
