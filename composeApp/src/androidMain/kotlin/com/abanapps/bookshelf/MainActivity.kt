@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
+import com.abanapps.App
 import com.abanapps.book.presentation.book_list.BookListScreen
 import com.abanapps.book.presentation.book_list.BookListState
 import com.abanapps.book.presentation.book_list.books
@@ -16,11 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App(
-                engine = remember {
-                    OkHttp.create()
-                }
-            )
+            App()
         }
     }
 }
