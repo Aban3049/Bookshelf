@@ -4,5 +4,6 @@ import com.abanapps.core.DataError
 import com.abanapps.core.domain.Result
 
 interface BookRepository {
-    suspend fun searchBooks(query:String):Result<List<Book>,DataError.Remote>
+    suspend fun searchBooks(query: String): Result<List<Book>, DataError.Remote>
+    suspend fun getBookDescription(bookId: String): Result<String?, DataError>
 }

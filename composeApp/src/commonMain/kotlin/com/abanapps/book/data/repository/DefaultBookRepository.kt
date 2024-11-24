@@ -10,13 +10,19 @@ import com.abanapps.core.domain.map
 
 class DefaultBookRepository(
     private val remoteDataSource: RemoteBookDataSource
-):BookRepository {
+) : BookRepository {
 
-   override suspend fun searchBooks(query: String): Result<List<Book>, DataError.Remote> {
+    override suspend fun searchBooks(query: String): Result<List<Book>, DataError.Remote> {
         return remoteDataSource.searchBooks(query = query).map { dto ->
             dto.results.map {
                 it.toBook()
             }
+        }
+    }
+
+    override suspend fun getBookDescription(bookId: String): Result<String?, DataError> {
+        return remoteDataSource.getBookDetails(bookId).map {
+            it.description
         }
     }
 

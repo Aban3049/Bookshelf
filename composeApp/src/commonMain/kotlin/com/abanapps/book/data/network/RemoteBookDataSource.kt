@@ -1,5 +1,6 @@
 package com.abanapps.book.data.network
 
+import com.abanapps.book.data.dto.BookWorkDto
 import com.abanapps.book.data.dto.SearchResponseDto
 import com.abanapps.book.data.dto.SearchedBookDto
 import com.abanapps.core.DataError
@@ -11,5 +12,7 @@ interface RemoteBookDataSource {
         query:String,
         resultLimit:Int?=null
     ):Result<SearchResponseDto,DataError.Remote>
+
+    suspend fun getBookDetails(bookWorkId: String):Result<BookWorkDto,DataError.Remote>
 
 }

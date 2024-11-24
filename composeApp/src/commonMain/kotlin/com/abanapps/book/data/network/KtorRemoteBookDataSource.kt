@@ -1,5 +1,6 @@
 package com.abanapps.book.data.network
 
+import com.abanapps.book.data.dto.BookWorkDto
 import com.abanapps.book.data.dto.SearchResponseDto
 import com.abanapps.book.data.dto.SearchedBookDto
 import com.abanapps.core.DataError
@@ -20,7 +21,7 @@ class KtorRemoteBookDataSource(
         resultLimit: Int?
     ): Result<SearchResponseDto, DataError.Remote> {
 
-        return safeCall {
+        return safeCall<SearchResponseDto> {
             httpClient.get("$BASE_URL/search.json") {
                 parameter("q", query)
                 parameter("limit", resultLimit)
@@ -33,6 +34,14 @@ class KtorRemoteBookDataSource(
         }
 
 
+    }
+
+    override suspend fun getBookDetails(bookWorkId: String): Result<BookWorkDto, DataError.Remote> {
+        return safeCall<BookWorkDto> {
+            httpClient.get(
+                urlString = "$BASE_URL/works/$bookWorkId.json"
+            )
+        }
     }
 
 }
