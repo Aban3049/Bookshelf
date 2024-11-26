@@ -1,5 +1,6 @@
 package com.abanapps.book.data.database
 
+import androidx.room.ConstructedBy
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
@@ -12,6 +13,7 @@ import androidx.room.TypeConverters
 @TypeConverters(
     StringListTypeConvertor::class
 )
+@ConstructedBy(BookDatabaseConstructor::class)
 abstract class FavouriteBookDatabase : RoomDatabase() {
 
     abstract val favouriteBookDao: FavouriteBookDao

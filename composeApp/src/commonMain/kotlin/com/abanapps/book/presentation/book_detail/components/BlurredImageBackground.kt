@@ -12,20 +12,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButtonColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -34,7 +31,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -47,7 +43,7 @@ import bookshelf.composeapp.generated.resources.remove_from_favourite
 import coil3.compose.rememberAsyncImagePainter
 import com.abanapps.core.presentation.DarkBlue
 import com.abanapps.core.presentation.DesertWhite
-import com.abanapps.core.presentation.SandYellow
+import com.abanapps.core.presentation.PulseAnimation
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -128,17 +124,20 @@ fun BlurredImageBackground(
             ElevatedCard(
                 modifier = Modifier.height(270.dp).aspectRatio(2 / 3f),
                 shape = RoundedCornerShape(8.dp),
-                colors = CardDefaults.elevatedCardColors(containerColor = Color.Transparent),
                 elevation = CardDefaults.elevatedCardElevation(15.dp)
             ) {
                 AnimatedContent(targetState = imageLoadResult) { result ->
 
                     when (result) {
 
-                        null -> CircularProgressIndicator()
+                        null -> Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) { PulseAnimation(modifier = Modifier.size(60.dp)) }
+
                         else -> {
 
-                            Box {
+                            Box(contentAlignment = Alignment.Center) {
                                 Image(
                                     painter = if (result.isSuccess) painter else painterResource(Res.drawable.book_error_2),
                                     contentDescription = stringResource(Res.string.book_cover),
@@ -163,7 +162,7 @@ fun BlurredImageBackground(
                                         ),
                                         tint = Color.Red,
 
-                                    )
+                                        )
                                 }
                             }
 
