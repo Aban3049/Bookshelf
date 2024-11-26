@@ -46,7 +46,7 @@ object BookWorkDtoSerializer : KSerializer<BookWorkDto> {
                 }
 
                 CompositeDecoder.DECODE_DONE -> break
-                else -> throw SerializationException("Unexpecte index $index")
+                else -> throw SerializationException("Unexpected index $index")
             }
 
 
