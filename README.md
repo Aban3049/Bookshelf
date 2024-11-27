@@ -1,8 +1,8 @@
 # 📚 BoookShelf App
 
-### This repository contains an E-Book App developed using Compose Multiplatform, designed to work seamlessly across Android, iOS, and Desktop platforms. The app was created as part of the Compose Multiplatform crash course by Philipp Lackner, showcasing the power of Kotlin Multiplatform for building modern cross-platform applications.
+This repository contains an E-Book App developed using Compose Multiplatform, designed to work seamlessly across Android, iOS, and Desktop platforms. The app was created as part of the Compose Multiplatform crash course by Philipp Lackner, showcasing the power of Kotlin Multiplatform for building modern cross-platform applications.
 
-#### 🚀 Features
+### 🚀 Features
 
 Cross-Platform Support: A single codebase for Android, iOS, and Desktop.MVI Architecture:
 Ensures clean, scalable, and maintainable code.
