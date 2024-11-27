@@ -1,14 +1,43 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
+📚 E-Book App
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+This repository contains an E-Book App developed using Compose Multiplatform, designed to work seamlessly across Android, iOS, and Desktop platforms. The app was created as part of the Compose Multiplatform crash course by Philipp Lackner, showcasing the power of Kotlin Multiplatform for building modern cross-platform applications.
+🚀 Features
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+    Cross-Platform Support: A single codebase for Android, iOS, and Desktop.
+    MVI Architecture: Ensures clean, scalable, and maintainable code.
+    API Integration: Powered by Ktor for making seamless network requests.
+    Local Storage: Utilizes Room Database for efficient offline storage.
+    State Management: Optimal use of states and ViewModels for reactive UIs.
+    Animations: Engaging and dynamic UI interactions for better user experience.
+
+🛠️ Tech Stack
+
+    Compose Multiplatform: For building declarative UIs across platforms.
+    Kotlin: The primary programming language for logic and UI.
+    MVI Architecture: For predictable state flow and separation of concerns.
+    Ktor: Lightweight HTTP client for API calls.
+    Koin: Dependency injection for better modularization.
+    Room Database: Local database for persistent storage.
+
+📂 Project Structure
+
+📦 e-book-app  
+├── 📂 androidApp       // Android-specific configurations  
+├── 📂 iosApp           // iOS-specific configurations  
+├── 📂 desktopApp       // Desktop-specific configurations  
+├── 📂 shared            // Shared business logic and UI  
+│   ├── 📂 data          // Data layer (repositories, models, etc.)  
+│   ├── 📂 ui            // Compose-based UI  
+│   ├── 📂 di            // Dependency injection (Koin modules)  
+│   └── 📂 utils         // Utility classes and helpers  
+
+🖥️ Screenshots
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+🤝 Contributing
+
+Feel free to fork this repository, submit issues, or create pull requests. Any contributions to enhance the app are highly appreciated!
+
+🌟 Acknowledgments
+
+A big thank you to Philipp Lackner for creating such an amazing crash course that made this project possible! 🎉
