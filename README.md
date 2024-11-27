@@ -34,6 +34,7 @@ Room Database: Local database for persistent storage.
 
 🖥️ Screenshots
 
+![Screenshot 2024-11-27 at 3 23 38 PM](https://github.com/user-attachments/assets/d1ce5b0d-ed40-4a19-917e-23a71b2f7f78)
 
 ### 🤝 Contributing
 
